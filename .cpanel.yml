@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/gzbvykmy/public_html/financeconsultantsco
+    - /bin/cp -R * $DEPLOYPATH
