@@ -1,3 +1,135 @@
+<?php
+	// Include config file
+	require_once 'config/config.php';
+
+
+	// Define variables and initialize with empty values
+	$username = $password = $confirm_password = "";
+
+	$f_name = $l_name = $user_email = $phone_no = $gender = $loc_state = $loc_district = $loc_city = $loc_pincode = "";
+	$dob = $qualifications = $bank = "";
+	
+
+	$username_err = $password_err = $confirm_password_err = "";
+
+	// Process submitted form data
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+		// Check if username is empty
+		if (empty(trim($_POST['username']))) {
+			$username_err = "Please enter a username.";
+
+			// Check if username already exist
+		} else {
+
+			// Prepare a select statement
+			$sql = 'SELECT id FROM customers WHERE email = ?';
+
+			if ($stmt = $mysql_db->prepare($sql)) {
+				// Set parmater
+				$param_username = trim($_POST['username']);
+
+				// Bind param variable to prepares statement
+				$stmt->bind_param('s', $param_username);
+
+				// Attempt to execute statement
+				if ($stmt->execute()) {
+					
+					// Store executed result
+					$stmt->store_result();
+
+					if ($stmt->num_rows == 1) {
+						$username_err = 'This username is already taken.';
+					} else {
+						$username = trim($_POST['username']);
+					}
+				} else {
+					echo "Oops! ${$username}, something went wrong. Please try again later.";
+				}
+
+				// Close statement
+				// $stmt->close();
+			} else {
+
+				// Close db connction
+				// $mysql_db->close();
+			}
+		}
+
+		// Validate password
+	    if(empty(trim($_POST["password"]))){
+	        $password_err = "Please enter a password.";     
+	    } elseif(strlen(trim($_POST["password"])) < 6){
+	        $password_err = "Password must have atleast 6 characters.";
+	    } else{
+	        $password = trim($_POST["password"]);
+	    }
+    
+	    // Validate confirm password
+	    if(empty(trim($_POST["confirm_password"]))){
+	        $confirm_password_err = "Please confirm password.";     
+	    } else{
+	        $confirm_password = trim($_POST["confirm_password"]);
+	        if(empty($password_err) && ($password != $confirm_password)){
+	            $confirm_password_err = "Password did not match.";
+	        }
+	    }
+
+
+			
+
+      $f_name = trim($_POST['fname']);
+      $l_name = trim($_POST['lname']);
+      $phone_no = trim($_POST['phoneno']);
+      $gender = trim($_POST['gender']);
+      $loc_state = trim($_POST['locstate']);
+      $loc_district = trim($_POST['locdistrict']);
+      $loc_city = trim($_POST['loccity']);
+      $loc_pincode = trim($_POST['locpincode']);
+      $dob = trim($_POST['dob']);
+      $qualifications = trim($_POST['qualif']);
+      $bank = trim($_POST['bank']);
+
+	    // Check input error before inserting into database
+
+	    if (empty($username_err) && empty($password_err) && empty($confirm_err)) {
+
+	    	// Prepare insert statement
+			$sql = 'INSERT INTO customers (f_name, l_name, email, password, phone, gender, city, district, pincode, state, date_of_birth, qualification, bank) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)';
+
+			if ($stmt = $mysql_db->prepare($sql)) {
+
+				// Set parmater
+				$param_username = $username;
+				$param_password = password_hash($password, PASSWORD_DEFAULT); // Created a password
+
+				// Bind param variable to prepares statement
+				$stmt->bind_param('sssssssssssss',$f_name,$l_name, $param_username, $param_password, $phone_no, $gender, $loc_city, $loc_district, $loc_pincode, $loc_state, $dob, $qualifications, $bank);
+
+				// Attempt to execute
+        // echo $sql."<br>";
+
+        // echo $f_name." ".$username." ".$param_password." ".$phone_no." ".$gender." ".$loc_city;
+
+
+				if ($stmt->execute()) {
+					// Redirect to login page
+					header('location: ./login.php');
+					// echo "Will  redirect to login page";
+				} else {
+					echo "Something went wrong. Try signing in again.";
+				}
+
+				// Close statement
+				// $stmt->close();	
+			}
+
+			// Close connection
+			// $mysql_db->close();
+	    }
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

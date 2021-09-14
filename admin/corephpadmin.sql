@@ -67,6 +67,23 @@ CREATE TABLE `customers` (
   `date_of_birth` date DEFAULT NULL,
   `qualification` varchar(30) DEFAULT NULL,
   `bank` varchar(50) DEFAULT NULL,
+
+  -- `reg_no` varchar(50) DEFAULT '-',
+  -- `father_name` varchar(50) DEFAULT '-',
+  -- `adhaar_number` varchar(50) DEFAULT '-',
+  -- `pan_number` varchar(50) DEFAULT '-',
+  -- `village` varchar(50) DEFAULT '-',
+  -- `organization` varchar(50) DEFAULT '-',
+  -- `account_no` varchar(50) DEFAULT '-',
+  -- `ifsc_code` varchar(50) DEFAULT '-',
+  -- `reg_fee` varchar(50) DEFAULT '-',
+  -- `reg_status` varchar(50) DEFAULT '-',
+  -- `loan_amount` varchar(50) DEFAULT '-',
+  -- `loan_period` varchar(50) DEFAULT '-',
+  -- `monthly_emi` varchar(50) DEFAULT '-',
+  -- `rate` varchar(50) DEFAULT '-',
+
+
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
