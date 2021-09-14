@@ -56,7 +56,7 @@ CREATE TABLE `customers` (
   `f_name` varchar(25) NOT NULL,
   `l_name` varchar(25) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `password` varchar(50) DEFAULT NULL,  
+  `password` varchar(200) DEFAULT NULL,  
   `phone` varchar(15) DEFAULT NULL,
   `gender` varchar(6) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
