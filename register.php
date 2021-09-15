@@ -175,15 +175,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       let pswd = document.forms["myForm"]["password"].value;
       let cnf_pswd = document.forms["myForm"]["confirm_password"].value;
 
+      let my_pwd_field = document.getElementById("pass");
+      let my_confirm_field = document.getElementById("pass2");
+
       if(pswd.length<6)
       {
-        alert("Password must have atleast 6 characters.");
+        my_pwd_field.classList.add("is-invalid");
         return false;
+      }
+      else
+      {
+        my_pwd_field.classList.remove("is-invalid");
       }
 
       if (pswd != cnf_pswd) {
-        alert("Password Must Be Same");
+        my_confirm_field.classList.add("is-invalid");
         return false;
+      }
+      else
+      {
+        my_confirm_field.classList.remove("is-invalid");
       }
     }
   </script>
@@ -340,10 +351,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <div class="col-sm-6 form-group">
             <label for="pass">Password</label>
             <input type="Password" name="password" class="form-control" id="pass" placeholder="Enter your password." required>
+
+            <div class="invalid-feedback">
+              Passsword should be atleast 6 characters long.
+            </div>
+
+
           </div>
           <div class="col-sm-6 form-group">
             <label for="pass2">Confirm Password</label>
             <input type="Password" name="confirm_password" class="form-control" id="pass2" placeholder="Re-enter your password." required>
+
+            <div class="invalid-feedback">
+              Passsword do not match.
+            </div>
+
+
           </div>
           <div class="col-sm-12">
             <input type="checkbox" class="form-check d-inline" id="chb" required><label for="chb" class="form-check-label">&nbsp;I accept all terms and conditions.
