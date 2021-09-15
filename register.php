@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->store_result();
 
         if ($stmt->num_rows == 1) {
-          $username_err = 'This username is already taken.';
+          $username_err = '<p>This email is already registered. Please use another email address or login in with this email.</p>';
         } else {
           $username = trim($_POST['username']);
         }
@@ -80,9 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $confirm_password_err = "Password did not match.";
     }
   }
-
-
-
 
   $f_name = trim($_POST['fname']);
   $l_name = trim($_POST['lname']);
@@ -173,6 +170,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     Author: BootstrapMade.com
     License: https://bootstrapmade.com/license/
   ======================================================= -->
+  <script>
+    function validate_my_form() {
+      let pswd = document.forms["myForm"]["password"].value;
+      let cnf_pswd = document.forms["myForm"]["confirm_password"].value;
+
+      if(pswd.length<6)
+      {
+        alert("Password must have atleast 6 characters.");
+        return false;
+      }
+
+      if (pswd != cnf_pswd) {
+        alert("Password Must Be Same");
+        return false;
+      }
+    }
+  </script>
+
+
 </head>
 
 <body id="body">
@@ -182,9 +198,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <main id="main" style="padding-top: 50px;">
 
     <div class="container">
-      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+      <form name="myForm" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" onsubmit="return validate_my_form()">
         <h2 class="text-center">Join Our Network</h2>
         <div class="row jumbotron">
+          <!-- <div class="myerrors"> <p>asdd</p></div> -->
+          <div class="col-12" style="text-align: center;color: red;"> <?php echo $username_err ?> </div>
+
           <div class="col-sm-6 form-group">
             <label for="name-f">First Name</label>
             <input type="text" class="form-control" name="fname" id="name-f" placeholder="Enter your first name." required>
@@ -271,7 +290,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
           <div class="col-sm-2 form-group">
             <label for="zip">Pin Code</label>
-            <input type="zip" class="form-control" name="locpincode" id="zip" placeholder="Pin-Code." required>
+            <input type="number" class="form-control" name="locpincode" id="zip" placeholder="Pin-Code." required>
           </div>
 
           <div class="col-sm-6 form-group">
@@ -369,6 +388,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <script src="js/main.js"></script>
   <script src="js/state_options.js"></script>
 
+
+  <script>
+
+
+    // Test Values
+
+    document.forms["myForm"]["fname"].value = "Siddhant";
+    document.forms["myForm"]["lname"].value = "Dixit";
+
+    document.forms["myForm"]["phoneno"].value = "9812377126";
+    document.forms["myForm"]["gender"].value = "Male";
+    document.forms["myForm"]["locstate"].value = "Delhi";
+    document.forms["myForm"]["loccity"].value = "Moradabad";
+    document.forms["myForm"]["locpincode"].value = "912389";
+    document.forms["myForm"]["dob"].value = "2002-04-23";
+
+  </script>
 </body>
 
 </html>
