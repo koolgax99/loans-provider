@@ -205,8 +205,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <div class="col-sm-6 form-group">
             <label for="sex">Gender</label>
             <select name="gender" id="sex" class="form-control browser-default custom-select">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
               <option value="unspesified">Unspecified</option>
             </select>
           </div>
