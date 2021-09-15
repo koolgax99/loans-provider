@@ -2,6 +2,10 @@
 // Include config file
 require_once 'config/config.php';
 
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+  header("location: welcome.php");
+  exit;
+}
 
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";

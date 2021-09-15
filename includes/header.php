@@ -1,3 +1,7 @@
+<?php
+session_start();
+error_reporting(0);
+?>
 <!--==========================
     Top Bar
   ============================-->
@@ -14,7 +18,10 @@
             <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
             <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
             <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-            <a href="#" class="btn-get-started scrollto">Login</a>
+            <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+                echo "<a href='welcome.php'>"
+                    . $_SESSION['username'] . "</a>";
+            } ?>
         </div>
     </div>
 </section>
@@ -34,13 +41,17 @@
 
         <nav id="nav-menu-container">
             <ul class="nav-menu">
-                <li class="menu-active"><a href="#">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="apply.html">Apply</a></li>
-                <!-- <button class="btn btn-primary my-2 my-sm-0" type="submit">Login</button> -->
-                <li><a href="login.html">Login</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="services.php">Services</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) { ?>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php } else { ?>
+                    <!-- <button class="btn btn-primary my-2 my-sm-0" type="submit">Login</button> -->
+                    <li><a href="register.php">Apply</a></li>
+                    <li><a href="login.php">Login</a></li>
+                <?php } ?>
             </ul>
         </nav>
         <!-- #nav-menu-container -->

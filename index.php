@@ -44,13 +44,7 @@
   ============================-->
   <section id="intro">
     <div class="intro-content">
-      <h3 style="padding: 150px">
-        Finance was formed with the aim to serve the customer with the best.
-        We are business correspondent and technology service provider to many
-        banks. We aim to provide support to the lower income group who are
-        workers and labor and do not have the saving account due to lack of
-        documents. To become Finance, contact us.
-      </h3>
+        <h2>TATA<span>Capital</span><br>Loan Finance</h2>
     </div>
 
     <div id="intro-carousel" class="owl-carousel">
