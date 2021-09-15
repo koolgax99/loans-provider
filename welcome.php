@@ -286,7 +286,7 @@ if (isset($_SESSION['username'])) {
             </div>
 
             <div style="display: block;">
-              <a class="btn btn-primary float-right" role="button" href="logout.php">Logout</a>
+              <a href="logout.php" class="btn btn-primary float-right" role="button">Logout</a>
             </div>
 
           </div>
