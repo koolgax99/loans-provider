@@ -396,7 +396,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     document.forms["myForm"]["fname"].value = "Siddhant";
     document.forms["myForm"]["lname"].value = "Dixit";
-
     document.forms["myForm"]["phoneno"].value = "9812377126";
     document.forms["myForm"]["gender"].value = "Male";
     document.forms["myForm"]["locstate"].value = "Delhi";
