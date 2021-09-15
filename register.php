@@ -236,14 +236,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <option value="Meghalaya">Meghalaya</option>
               <option value="Mizoram">Mizoram</option>
               <option value="Nagaland">Nagaland</option>
-              <option value="Orissa">Orissa</option>
+              <option value="Odisha">Odisha</option>
               <option value="Punjab">Punjab</option>
               <option value="Rajasthan">Rajasthan</option>
               <option value="Sikkim">Sikkim</option>
               <option value="Tamil Nadu">Tamil Nadu</option>
               <option value="Telangana">Telangana</option>
               <option value="Tripura">Tripura</option>
-              <option value="Uttaranchal">Uttaranchal</option>
+              <option value="Uttarakhand">Uttarakhand</option>
               <option value="Uttar Pradesh">Uttar Pradesh</option>
               <option value="West Bengal">West Bengal</option>
               <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
@@ -252,7 +252,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
               <option value="Daman and Diu">Daman and Diu</option>
               <option value="Delhi">Delhi</option>
-              <option value="Lakshadeep">Lakshadeep</option>
+              <option value="Lakshadweep">Lakshadweep</option>
               <option value="Pondicherry">Pondicherry</option>
             </select>
           </div>

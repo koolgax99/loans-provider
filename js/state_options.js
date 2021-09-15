@@ -34,7 +34,7 @@ var DadraHaveli = ["Dadra Nagar Haveli"];
 var DamanDiu = ["Daman","Diu"];
 var Delhi = ["Central Delhi","East Delhi","New Delhi","North Delhi","North East Delhi","North West Delhi","Shahdara","South Delhi","South East Delhi","South West Delhi","West Delhi"];
 var Lakshadweep = ["Lakshadweep"];
-var Puducherry = ["Karaikal","Mahe","Puducherry","Yanam"];
+var Pondicherry = ["Karaikal","Mahe","Pondicherry","Yanam"];
 
 
 $("#inputState").change(function(){
@@ -100,8 +100,8 @@ $("#inputState").change(function(){
     case "Nagaland":
         optionsList = Nagaland;
         break;
-    case  "Orissa":
-        optionsList = Orissa;
+    case  "Odisha":
+        optionsList = Odisha;
         break;
     case "Punjab":
         optionsList = Punjab;
@@ -121,8 +121,8 @@ $("#inputState").change(function(){
     case "Tripura":
         optionsList = Tripura ;
         break;
-    case  "Uttaranchal":
-        optionsList = Uttaranchal;
+    case  "Uttarakhand":
+        optionsList = Uttarakhand;
         break;
     case  "Uttar Pradesh":
         optionsList = UttarPradesh;
@@ -145,8 +145,8 @@ $("#inputState").change(function(){
     case  "Delhi":
         optionsList = Delhi;
         break;
-    case "Lakshadeep":
-        optionsList = Lakshadeep ;
+    case "Lakshadweep":
+        optionsList = Lakshadweep ;
         break;
     case  "Pondicherry":
         optionsList = Pondicherry;
