@@ -379,7 +379,10 @@ if (isset($_SESSION['username'])) {
 				{
 					echo $rate."%";
 				}
-				echo $rate;
+				else
+        {
+          echo $rate;
+        }
 				?>  </td>
               </tr>
 
