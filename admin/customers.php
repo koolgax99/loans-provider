@@ -31,7 +31,7 @@ if (!$order_by) {
 
 //Get DB instance. i.e instance of MYSQLiDB Library
 $db = getDbInstance();
-$select = array('id', 'f_name', 'l_name', 'gender', 'phone', 'created_at', 'updated_at');
+$select = array('id', 'f_name', 'l_name','email', 'gender', 'phone', 'created_at', 'updated_at');
 
 //Start building query according to input parameters.
 // If search string
@@ -110,7 +110,7 @@ include BASE_PATH . '/includes/header.php';
             <tr>
                 <th width="5%">ID</th>
                 <th width="45%">Name</th>
-                <th width="20%">Gender</th>
+                <th width="20%">Email</th>
                 <th width="20%">Phone</th>
                 <th width="10%">Actions</th>
             </tr>
@@ -120,7 +120,7 @@ include BASE_PATH . '/includes/header.php';
                 <tr>
                     <td><?php echo $row['id']; ?></td>
                     <td><?php echo xss_clean($row['f_name'] . ' ' . $row['l_name']); ?></td>
-                    <td><?php echo xss_clean($row['gender']); ?></td>
+                    <td><?php echo xss_clean($row['email']); ?></td>
                     <td><?php echo xss_clean($row['phone']); ?></td>
                     <td>
                         <a href="edit_customer.php?customer_id=<?php echo $row['id']; ?>&operation=edit" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i></a>
