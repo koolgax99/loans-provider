@@ -24,6 +24,7 @@ class Costumers
             'id' => 'ID',
             'f_name' => 'First Name',
             'l_name' => 'Last Name',
+            'email' => 'Email',
             'gender' => 'Gender',
             'phone' => 'Phone',
             'created_at' => 'Created at',
