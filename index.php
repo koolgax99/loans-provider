@@ -44,7 +44,7 @@
   ============================-->
   <section id="intro">
     <div class="intro-content">
-        <h2>TATA<span>Capital</span><br>Loan Finance</h2>
+        <h2>Finance<span>Consultants</span><br>Loan Finance</h2>
     </div>
 
     <div id="intro-carousel" class="owl-carousel">
