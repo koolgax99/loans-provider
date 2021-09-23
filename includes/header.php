@@ -1,7 +1,6 @@
 <?php
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
+if (!isset($_SESSION)) {
+    session_start();
 }
 error_reporting(0);
 ?>
@@ -36,7 +35,7 @@ error_reporting(0);
     <div class="container">
         <div id="logo" class="pull-left">
             <h1>
-                <a href="#body" class="scrollto">Finance<span>Consultants</span></a>
+                <a href="#body" class="scrollto"><span>Consultants</span></a>
             </h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
